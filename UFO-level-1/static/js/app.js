@@ -31,7 +31,7 @@ form.on("submit", filterData);
 
 // Create filter function and check for output
 function filterData () {
-
+    d3.select("tbody").html(""); 
     console.log("You clicked the filter")
 
     // Prevent page from refreshing 
@@ -40,7 +40,7 @@ function filterData () {
     // Select input element and raw HTML node
     var inputElement = d3.select("#datetime"); 
 
-    // Get value of input element
+    // Get value of input elementc
     var inputValue = inputElement.property("value")
 
     // Filter data by date
@@ -49,13 +49,10 @@ function filterData () {
     // Check to ensure data has been filtered
     console.log(filteredData); 
 
-    // where to put this??? 
-    tbody.html(""); 
-
     // Return filtered data onto website
-    data.forEach(filteredData => {
+    filteredData.forEach(filteredsighting => {
         var row = tbody.append("tr"); 
-        var kvps = Object.entries(filteredData).forEach(([key, value]) => {
+        var kvps = Object.entries(filteredsighting).forEach(([key, value]) => {
             var td = row.append("td"); 
             td.text(value)
         });

@@ -54,7 +54,7 @@ function filterData () {
         var row = tbody.append("tr"); 
         var kvps = Object.entries(filteredsighting).forEach(([key, value]) => {
             var td = row.append("td"); 
-            td.text(value)
+            td.html(value)
         });
     });
 
